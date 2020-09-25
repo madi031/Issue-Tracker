@@ -1,0 +1,297 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 20px 50px;
+}
+
+h2 {
+  text-align: center;
+}
+
+#newIssuesModal {
+  background-color: rgb(0, 0, 0, 0.4);
+  display: none;
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.closeButton {
+  align-items: center;
+  border-radius: 50%;
+  color: #24292e;
+  cursor: pointer;
+  display: flex;
+  float: right;
+  font-size: 1.25rem;
+  height: 30px;
+  justify-content: center;
+  margin-top: -10px;
+  width: 30px;
+}
+
+.closeButton:hover {
+  background-color: #cacdcf;
+}
+
+.closeButton span {
+  margin-bottom: 2px;
+  margin-left: 2px;
+}
+
+#newIssuesPane {
+  background-color: #fff;
+  border: 1px solid #e1e4e8;
+  border-radius: 5px;
+  margin: 10% auto;
+  padding: 20px;
+  width: 80%;
+}
+
+.newIssueText {
+  background-color: #fafbfc;
+  border-radius: 5px;
+  border: 1px solid #e1e4e8;
+  color: #24292e;
+  font-size: 0.9rem;
+  height: 40px;
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+}
+
+.newIssueDescription {
+  background-color: #fafbfc;
+  border-radius: 5px;
+  border: 1px solid #e1e4e8;
+  color: #24292e;
+  font-size: 0.9rem;
+  height: 200px;
+  margin: 10px 0;
+  max-height: 500px;
+  min-height: 200px;
+  padding: 10px;
+  width: 100%;
+}
+
+.newIssueLabel {
+  color: #586069;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.newIssueSeverity {
+  background-color: #fafbfc;
+  border-radius: 5px;
+  border: 1px solid #e1e4e8;
+  color: #24292e;
+  cursor: pointer;
+  font-size: 0.9rem;
+  height: 40px;
+  margin: 0 30px 0 10px;
+  width: 30%;
+}
+
+.newIssueInfo {
+  align-items: center;
+  display: flex;
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 10px 0 0 0;
+}
+
+.btnPrimary {
+  background-color: #2ea44f;
+  border: 1px solid;
+  border-color: rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: 0 1px 0 rgba(27, 31, 35, 0.1),
+    inset 0 1px 0 hsla(0, 0%, 100%, 0.03);
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  min-width: 100px;
+  padding: 10px 15px;
+  white-space: nowrap;
+}
+
+.btnDanger {
+  background-color: #f3f4f6;
+  color: #cb2431;
+  margin-right: 20px;
+  transition: all 0.5s ease;
+}
+
+.btnDanger:hover {
+  background-color: #cb2431;
+  color: #fff;
+}
+
+#openIssuesPane {
+  margin: 50px 0;
+}
+
+.issueContainer {
+  border-bottom: 1px solid #e1e4e8;
+  color: #24292e;
+  padding: 10px 0;
+}
+
+.issueTitle {
+  color: #24292e;
+  font-size: 1rem;
+}
+
+.issueTitle span {
+  color: #586069;
+  font-size: 0.8rem;
+}
+
+.issueDescription {
+  color: #586069;
+  font-size: 0.9rem;
+  margin: 10px 0;
+}
+
+.issueInfo {
+  align-items: center;
+  display: flex;
+}
+
+.issueSeverity {
+  border-radius: 5px;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: 10px;
+  padding: 2px 10px;
+  text-align: center;
+  text-transform: capitalize;
+  width: fit-content;
+}
+
+.low {
+  background-color: #fca652;
+}
+
+.medium {
+  background-color: #ac4b1c;
+}
+
+.high {
+  background-color: #ff414d;
+}
+
+.issueOwner {
+  color: #24292e;
+  font-size: 0.9rem;
+}
+
+.issueOwner span {
+  color: #586069;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.issueAction {
+  align-items: center;
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 10px 0;
+}
+
+#closedIssuesPane {
+  display: none;
+}
+
+#openIssuesPane #infoText {
+  color: #586069;
+  display: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.paneTitle {
+  color: #586069;
+  margin-bottom: 20px;
+}
+
+.createIssueButton {
+  align-items: center;
+  background-color: #2ea44f;
+  border: 1px solid;
+  border-color: rgba(27, 31, 35, 0.15);
+  border-radius: 25px;
+  bottom: 30px;
+  box-shadow: 0 1px 0 rgba(27, 31, 35, 0.1),
+    inset 0 1px 0 hsla(0, 0%, 100%, 0.03);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-size: 2rem;
+  left: 50px;
+  height: 40px;
+  justify-content: center;
+  overflow: hidden;
+  padding: 10px 15px;
+  position: fixed;
+  transition: width 0.5s;
+  width: 40px;
+  z-index: 1;
+}
+
+.createIssueButton p {
+  display: flex;
+}
+
+.createIssueButton .shortButtonText {
+  margin-top: -5px;
+}
+
+.longButtonText {
+  display: none;
+  font-size: 0.9rem;
+  margin-left: 5px;
+}
+
+.createIssueButton:hover {
+  border-radius: 25px;
+  white-space: nowrap;
+  width: 157px;
+}
+
+.createIssueButton:hover .longButtonText {
+  align-items: center;
+  display: flex;
+  font-size: 0.9rem;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .newIssueInfo {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .newIssueSeverity {
+    margin: 10px 0;
+    width: 100%;
+  }
+}

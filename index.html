@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Issue Tracker</title>
+  </head>
+  <body>
+    <h2>Issue Tracker</h2>
+    <div id="newIssuesModal">
+      <section id="newIssuesPane">
+        <p class="closeButton">
+          <span> &times; </span>
+        </p>
+        <form id="newIssueForm">
+          <input
+            autocapitalize="sentences"
+            autofocus
+            class="newIssueText"
+            id="issueTitle"
+            placeholder="Title"
+            required
+            type="text"
+          />
+          <textarea
+            autocapitalize="sentences"
+            class="newIssueDescription"
+            id="issueDescription"
+            name="issueDescription"
+            placeholder="Leave a comment"
+            spellcheck="true"
+          ></textarea>
+          <div class="newIssueInfo">
+            <label class="newIssueLabel" for="issueSeverity"> Severity </label>
+            <select
+              class="newIssueSeverity"
+              id="issueSeverity"
+              name="issueSeverity"
+            >
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+            <input
+              class="newIssueText"
+              id="issueOwner"
+              name="issueOwner"
+              placeholder="Owner"
+              required
+              type="text"
+            />
+          </div>
+          <div class="btnContainer">
+            <button class="btnPrimary" type="submit">Submit new issue</button>
+          </div>
+        </form>
+      </section>
+    </div>
+    <section id="openIssuesPane">
+      <h4 class="paneTitle">Open Issues</h4>
+      <p id="infoText">Hurray!! No open issues found</p>
+    </section>
+    <section id="closedIssuesPane">
+      <h4 class="paneTitle">Closed Issues</h4>
+    </section>
+    <div class="createIssueButton">
+      <p>
+        <span class="shortButtonText">+</span>
+        <span class="longButtonText">Create new issue</span>
+      </p>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
